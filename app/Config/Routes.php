@@ -9,4 +9,5 @@ $routes->get('/', ['Home', 'index']);
 
 $routes->group('customers', function ($routes) {
     $routes->get('/', 'CustomersController::index');
+    $routes->get('getTooltip/(:num)', 'CustomersController::getTooltip/$1');
 });

@@ -41,7 +41,8 @@
                     <tr>
                         <td>
                             <span class="customer-tooltip" data-customer-id="<?= $customer['id']; ?>"
-                                data-bs-toggle="popover" data-bs-trigger="hover focus" title="Loading...">
+                                data-bs-toggle="popover" data-bs-trigger="hover focus" title="<?= $customer['name'] ?>"
+                                style="cursor: pointer;">
                                 <?= esc($customer['name']); ?>
                             </span>
                         </td>
@@ -55,13 +56,55 @@
 
     <script>
         $(document).ready(function () {
-            let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-            popoverTriggerList.forEach(function (popoverTriggerEl) {
-                new bootstrap.Popover(popoverTriggerEl, {
-                    html: true,
-                    content: 'Loading...',
-                    placement: 'right',
-                });
+            $('[data-bs-toggle="popover"]').popover({
+                html: true,
+                content: 'Loading...',
+                trigger: 'manual',
+                placement: 'right',
+                sanitize: false,
+            });
+
+            $(document).on('mouseenter', '.customer-tooltip', function () {
+                let el = $(this);
+                let id = el.data('customer-id');
+
+                if (!el.data('loaded')) {
+                    $.get(`/customer_tooltip_project/public/customers/getTooltip/${id}`, function (data) {
+                        el.attr('data-bs-content', data);
+                        el.data('loaded', true);
+
+                        el.popover('dispose').popover({
+                            html: true,
+                            content: el.attr('data-bs-content'),
+                            trigger: 'manual',
+                            placement: 'right',
+                            sanitize: false,
+                        }).popover('show');
+                    });
+                } else {
+                    el.popover('show');
+                }
+            });
+
+            $(document).on('mouseenter', '.popover', function () {
+                $(this).addClass('popover-hover');
+            });
+
+            $(document).on('mouseleave', '.popover', function () {
+                $(this).removeClass('popover-hover');
+                setTimeout(function () {
+                    if (!$('.popover-hover').length) {
+                        $('.customer-tooltip').popover('hide');
+                    }
+                }, 200);
+            });
+
+            $(document).on('mouseleave', '.customer-tooltip', function () {
+                setTimeout(function () {
+                    if (!$('.popover-hover').length) {
+                        $('.customer-tooltip').popover('hide');
+                    }
+                }, 200);
             });
         });
     </script>
