@@ -1,0 +1,554 @@
+.linkd {
+  text-decoration: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.mleft5 {
+  margin-left: 5px;
+}
+
+.label {
+  font-weight: 400;
+  padding: 0.3em 0.7em 0.3em;
+}
+
+.label-default {
+  background: 0 0;
+  border: 1px solid #d2d5dc;
+  color: #63686f;
+}
+
+.vend {
+  padding-top: 10px !important;
+}
+
+.btn2 {
+  background-color: #f94706 !important;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 3px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  /* font-size: 15px; */
+  border-radius: 5px;
+}
+
+/*.progress-bar-success {
+    background-color: #84c529;
+}
+.progress-bar {
+    color: #fff;
+        background-color: #84c529 !important;
+}*/
+
+.butnali1 {
+  left: 0;
+  top: 38%;
+}
+
+.new-estimate-align {
+  margin-left: 10px !important;
+}
+
+.purchasereq-align {
+  margin-left: 10px !important;
+}
+
+.col-md-10 {
+  margin-top: 10px;
+}
+
+.qarow1 {
+  margin-bottom: 10px !important;
+}
+
+/* correction */
+.questionm {
+  margin-left: 4px;
+}
+
+.pageT {
+  margin-left: 1px;
+}
+
+.deatilg {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.question {
+  margin-left: 4px;
+}
+
+.codein {
+  margin-top: 2px;
+}
+
+.pageV {
+  width: 95%;
+}
+
+.stree {
+  margin-left: 6px;
+}
+
+.topstreet {
+  margin-top: 4px;
+}
+
+.content {
+  margin-left: 17px;
+  margin-right: 12px;
+}
+
+.foot {
+  margin-left: -8px;
+  margin-right: 25px;
+}
+
+.dflx {
+  display: flex;
+}
+
+.skm {
+  margin-top: 2px;
+}
+
+.stmargin {
+  margin-top: -6px;
+}
+
+.payment {
+  margin-left: 6px;
+}
+
+.saved {
+  margin-right: 36px;
+}
+
+.bstreet {
+  margin-top: 4px;
+}
+
+.zip {
+  margin-left: 1px;
+}
+
+.returnp {
+  margin-left: 5px;
+}
+
+.space {
+  margin-right: 6px;
+}
+
+.impage {
+  width: 96%;
+}
+
+.csv {
+  margin-bottom: 10px;
+}
+
+.importbtn {
+  margin-top: 1px !important;
+}
+
+.saved {
+  margin-left: -12px;
+}
+
+.biladress {
+  margin-top: 5px;
+}
+
+.csvfile {
+  margin-bottom: 5px;
+}
+
+.importbtn {
+  margin-left: 5px;
+  margin-top: 9px;
+}
+
+.ds {
+  margin-bottom: 11px;
+}
+
+.questionm {
+  margin-left: 4px;
+}
+
+.scode {
+  margin-top: 2px;
+}
+
+/* Don't use id and predefinded class like this */
+div#first_col {
+  /* margin-left: 35px; */
+}
+
+.deatilg {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.descript {
+  margin-left: 6px;
+}
+
+.stree {
+  margin-left: 6px;
+}
+
+.vendori {
+  width: 99% !important;
+  margin-left: 7px !important;
+}
+
+.row.invtblerow_adj {
+  margin-left: 15px;
+  margin-right: 0px;
+}
+
+.row.ps6.vendori.invtblerow_adj1 {
+  margin-left: 5px;
+  margin-right: -5px;
+}
+
+.invseccol.invt_owrrr1 {
+  margin-top: 0px;
+  margin-left: -15px;
+  margin-right: -5px;
+  padding: 8px 8px 10px;
+}
+
+.dragdrop {
+  margin-top: 30px;
+}
+
+.list {
+  font-size: 16px;
+}
+
+.tbl {
+  margin-top: 18px;
+}
+
+.downl {
+  margin-bottom: 18px !important;
+  margin-left: 15px !important;
+  margin-top: 10px !important;
+}
+
+.notes {
+  margin-top: 15px;
+}
+
+.importbtn {
+  margin-bottom: 13px !important;
+  margin-top: 13px !important;
+}
+
+.csv {
+  margin-bottom: 3px !important;
+}
+
+.vfoot {
+  margin-right: 19px !important;
+}
+
+.vendorpage {
+  margin-left: 17px !important;
+  margin-right: 15px !important;
+  max-width: 97%;
+}
+
+.paymargin {
+  margin-top: -5px !important;
+}
+
+.citymargin {
+  margin-top: 5px;
+}
+
+.tsk-left {
+  margin-left: 350px !important;
+}
+
+.shippingm {
+  margin-top: 6px;
+}
+
+.movepage {
+  overflow: auto !important;
+}
+
+.footbtn1 {
+  margin-right: -1px !important;
+}
+
+.dragmargin {
+  margin-top: -7px !important;
+}
+
+@media (max-width: 768px) {
+  .downsample {
+    margin-left: -5px !important;
+  }
+
+  .all-contacts {
+    width: 95% !important;
+    margin-left: -1px;
+  }
+
+  .topnewbtn {
+    max-width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+
+  .imbtnmargin {
+    margin-bottom: 10px !important;
+  }
+
+  .tabletopmargin {
+    margin-bottom: 1rem !important;
+  }
+
+  .headtbl {
+    margin-left: -15px !important;
+    max-width: max-content;
+  }
+}
+
+.paddinginline14px12px {
+  padding-left: 14px;
+  padding-right: 12px;
+}
+
+.marginbottom5px {
+  margin-bottom: 5px !important;
+}
+
+.marginbottom0px {
+  margin-bottom: 0px !important;
+}
+
+.marginfixedtaskfooter {
+  margin-left: 184px;
+  margin-right: -27px;
+}
+
+.paddingtop30px {
+  padding-top: 30px !important;
+}
+
+button.contractfilter.edittglbtn5.ali_crctmargtog {
+  margin-left: -27px;
+}
+
+.marginblock5px10px {
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+}
+
+.marginleft3px {
+  margin-left: 3px !important;
+}
+
+.dropdown-posrel-zi {
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+.dropdownzi {
+  z-index: 1000 !important;
+}
+
+.paddingright10px {
+  padding-right: 10px !important;
+}
+
+@media screen and (max-width: 991px) {
+  .unsetmxwidth {
+    max-width: unset !important;
+  }
+
+  .resmargintop25px {
+    margin-top: 25px !important;
+  }
+
+  .resmargininline {
+    margin-inline: auto !important;
+  }
+}
+
+.mrgbt {
+  margin-top: 90px !important;
+}
+
+.purchaseinfo.wrpaln {
+  display: inline-block;
+  max-width: 366px;
+}
+
+input.form-control.purchaseselects.mr {
+  margin-top: 3px;
+}
+
+.tblcontainer.tabspace.bg-white.tbbl-contain.mlwsin.mrrt {
+  margin-right: -11px;
+}
+
+.no-border {
+  border: none !important;
+}
+
+div#table_dp_filter {
+  width: 45%;
+}
+
+.drag-file-area {
+  /* width: 60% !important;  */
+}
+
+.font14px {
+  font-size: 16px;
+}
+
+p.header-effect {
+  /* position: relative; */
+}
+
+.header-effect span {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+@media screen and (max-width: 520px) {
+  h3.dynamic-message {
+    font-size: 14px;
+  }
+
+  .browse-files-text {
+    font-size: 15px;
+  }
+
+  span.material-icons-outlined.upload-icon {
+    font-size: 37px;
+  }
+}
+
+table#dtHorizontalExample {
+  display: grid;
+}
+
+.mbpchan {
+  margin-bottom: 25% !important;
+}
+
+.mbfrchan {
+  margin-bottom: 6px !important;
+}
+
+.mrnchan {
+  margin-right: -15px !important;
+}
+
+.higchan {
+  height: 35px !important;
+}
+
+.mtenchan {
+  margin-left: -10px !important;
+}
+
+.mtetchan {
+  margin-top: 5px !important;
+}
+
+@media (max-width: 768px) {
+  .reswidthunset {
+    width: unset !important;
+  }
+
+  .respaddingpurchase {
+    padding-inline: 18px 0px !important;
+  }
+
+  .reswidthposmargin {
+    position: relative !important;
+    margin-top: -42px !important;
+    width: 103.5% !important;
+  }
+  .resmarginbottom2px {
+    margin-bottom: 2px !important;
+  }
+  .resmargintop150px {
+    margin-top: 150px !important;
+  }
+  .restop120 {
+    top: -120px !important;
+  }
+  .resmarginright12px {
+    margin-right: 12px !important;
+  }
+  .resmarginright5px {
+    margin-right: 5px !important;
+  }
+  .top65px {
+    top: -65px !important;
+  }
+  .resmargintop100px {
+    margin-top: 100px !important;
+  }
+}
+.row.adj_margfortop {
+  margin-top: -5px;
+}
+.taskfooter.ftrbtm.text-end.mt-3.bg-white.alt_marg_btmm {
+  margin-left: 14px !important;
+  width: 97.5%;
+  height: 56px;
+}
+button.ask_marg {
+  margin-top: 10px;
+  margin-right: 19px !important;
+}
+input.form-control.dsfv_klh {
+  margin-top: -2px;
+}
+
+.tablinks2 i {
+  color: #405189 !important;
+}
+.font-size-125.border.fgh_hgfd {
+ 
+  height: 35px;
+  border-radius: 4px;
+display: flex;
+  align-items: center;
+
+}
+.rating-container {
+  font-size: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+ 
+}
+.rating-container .fa-star {
+  color: #ccc;
+  cursor: pointer;
+}
+.rating-container .fa-star.checked {
+  color: orange;
+}
+.container-fluid.tblcontainer.relative.pageV123.marginc.resmargintop150px.resmarginright12px {
+  width: 98%;
+}

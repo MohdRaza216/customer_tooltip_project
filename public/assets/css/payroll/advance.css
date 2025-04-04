@@ -1,0 +1,163 @@
+.help-block {
+  margin-left: 10px;
+  color: red;
+}
+
+.hdrw {
+  border: none !important;
+  padding-top: 20px !important;
+}
+
+.select2-container .select2-selection--multiple {
+  min-height: 0px;
+}
+
+.addbtn {
+  margin: 15px 4px 20px;
+}
+
+.select2-container--default .select2-selection--multiple {
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: text;
+  padding-bottom: 8px;
+  margin-top: -1px;
+  padding-right: 5px;
+  position: relative;
+}
+
+label {
+  font-weight: normal;
+}
+
+.dataTables_info {
+  font-weight: normal;
+}
+
+table.dataTable {
+  padding-top: 20px !important;
+}
+
+button.dt-button,
+div.dt-button,
+a.dt-button {
+  margin-bottom: 20px;
+}
+
+.addbttn {
+  margin-left: 0px !important;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.marginset1 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.linehr {
+  margin: -1px !important;
+}
+
+.new-approve {
+  font-size: 12px !important;
+  background-color: #3cd114;
+  color: #3cd114;
+  border-radius: 0.25em;
+}
+
+.btn-margin {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: -1px;
+}
+
+.btn-margin1 {
+  margin-top: 10px;
+  margin-bottom: -50px;
+  margin-left: -1px;
+}
+
+.col-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row-mbottom {
+  margin-bottom: -15px;
+}
+
+.row-mtop-1 {
+  margin-top: 20px;
+  margin-bottom: -15px;
+}
+
+.vendor {
+  padding: 7px !important;
+}
+
+.row-mtop5 {
+  border: 1px solid #e6e9eb;
+  color: #415164;
+  background-color: #f1f5f7;
+  border-color: #e6e9eb;
+  border-radius: 4px;
+}
+
+.thead_color {
+  color: black;
+  background-color: white;
+}
+
+.accept_bttn {
+  border: none;
+  border-radius: 4px;
+  font-family: var(--primary-font);
+  float: none !important;
+  color: whitesmoke;
+  background-color: #daf4f0 !important;
+  font-size: 14px !important
+                /* 0.75em*/
+            ;
+  color: #0ab39c !important;
+  padding: 0.25em 0.4em !important;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  /* background-color: rgba(33, 37, 41, 0.02) !important; */
+  color: #212529 !important;
+  background-color: none;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  /* background-color: #f0f0f0 !important; */
+  background-color: none;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #fff;
+}
+
+#drop-zone {
+  max-width: 100% !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .addbttn {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  tbody tr .odd {
+    margin-bottom: 5px;
+  }
+}
+

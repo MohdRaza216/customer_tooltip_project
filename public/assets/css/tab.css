@@ -1,0 +1,135 @@
+/*tabs css*/
+.tablinks2 {
+  margin-top: 5px;
+  justify-content: center;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+}
+.tablinks2 i {
+  color: #405189;
+}
+.tablinks2.active,
+.tablinks3.active,
+.tablinks4.active {
+  margin-top: 5px !important;
+  justify-content: center !important;
+  text-align: center !important;
+  border-radius: 3px !important;
+  padding: 5px !important;
+  border-bottom: none !important;
+  color: #405189 !important;
+  background: rgba(216, 216, 216, 0.15) !important;
+}
+.tablinks2:hover {
+  margin-top: 5px;
+  justify-content: center;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+  border-bottom: none !important;
+  color: #405189 !important;
+  background: rgba(216, 216, 216, 0.15);
+}
+.tabresact {
+  margin-top: 5px;
+  justify-content: center;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+  border-bottom: none !important;
+  /* color: rgb(178, 100, 214) !important; */
+}
+.tab-container {
+  overflow: visible;
+}
+.tab-container .dropdown-menu li {
+  display: block;
+  width: 100%;
+}
+.tab-drop {
+  padding: 0px 5px;
+}
+.drop-tog-icn::after {
+  display: none !important;
+}
+.dropdown-menu .tablinks2 {
+  justify-content: left;
+  text-align: start;
+  padding: 10px 15px !important;
+}
+.dropdown-menu .tablinks2.active,
+.tablinks3.active,
+.tablinks4.active {
+  justify-content: left !important;
+  text-align: start !important;
+  border-bottom: none !important;
+  padding: 10px 15px !important;
+  color: #212529 !important;
+  background: rgba(114, 30, 30, 0.05) !important;
+}
+.dropdown-menu .tablinks2:hover {
+  justify-content: left;
+  text-align: start;
+  padding: 10px 15px !important;
+  border-bottom: none !important;
+  /* color: #212529 !important; */
+  /* background: rgba(114, 30, 30, 0.05)!important; */
+  background-color: transparent !important;
+  opacity: 2 !important;
+}
+.ul-tab {
+  padding: 10px !important;
+}
+.tab-drop {
+  display: flex;
+  position: relative;
+  gap: 10px;
+  align-items: center;
+}
+.tab-drop .tab-drop-img {
+  border-radius: 8px;
+  padding: 15px 10px;
+  background-color: rgba(240, 142, 97, 0.09);
+}
+.tab-drop-img i {
+  color: rgb(235, 113, 82) !important;
+}
+.notification-span {
+  color: white;
+  margin: 0px 2px;
+  border-radius: 50%;
+  background: #e96e49;
+  padding: 0px 6px;
+}
+/*accordian css*/
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'  width='20' height='20' fill='white' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E") !important;
+  transition: all 0.5s !important;
+  background: #59598a;
+  padding: 10px;
+  border-radius: 50%;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E") !important;
+}
+.accordion-button::after {
+  transition: all 0.5s !important;
+}
+.accordion-item {
+  border-radius: 0px;
+  border: 1px solid #e1e1e1;
+  position: relative;
+}
+.accordion-button .notification-span {
+  color: white;
+  font-weight: 600;
+  margin: 0px 2px;
+  border-radius: 50%;
+  background: #ec4868;
+  padding: 0px 6px;
+  font-size: 10px;
+}
+.accordion-item.borchan.alig_btnt {
+  margin-top: 10px;
+}

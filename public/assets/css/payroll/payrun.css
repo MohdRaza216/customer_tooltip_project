@@ -1,0 +1,97 @@
+
+<style>
+#calendar {
+  /* font-family: Arial, sans-serif; */
+  /* width: 300px; */
+  margin: 0 auto;
+}
+#month-year {
+  text-align: center;
+  margin: 10px;
+}
+#leftArrow, #rightArrow {
+  text-align: center;
+  border: none !important;
+  background-color: white !important;
+}
+.cal{
+  margin-top: -8px;
+}
+table, th, td {
+  border: 1px solid rgb(241, 239, 239);
+  border-collapse: collapse;
+  padding: 5px;
+}
+.centerhead{
+  text-align: center;
+}
+.check-top-space {
+  margin-top: 40px;
+}
+.ml{
+  margin-left: -30px!important;
+}
+.div-margin{
+  margin-left: 15px; margin-right: 15px;
+}
+.cal-tbl-margin{
+  margin-left: 1px;
+  margin-right: 2px;
+}
+@media only screen and (max-width: 768px){
+  .cal-view{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 3px;
+  }
+}
+.help-block{
+  margin-left: 10px;
+  color: red;
+}
+.hdrw {
+  border: none !important;
+  padding-top: 30px !important;
+}
+
+.select2-container .select2-selection--multiple {
+  min-height: 0px;
+}
+
+.addbtn {
+  margin: 15px 4px 20px;
+}
+
+.select2-container--default .select2-selection--multiple {
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: text;
+  padding-bottom: 8px;
+  margin-top: -1px;
+  padding-right: 5px;
+  position: relative;
+}
+
+label  {
+  font-weight: normal;
+}
+
+.dataTables_info {
+  font-weight: normal;
+}
+
+table.dataTable {
+  padding-top: 20px !important;
+}
+
+button.dt-button,
+div.dt-button,
+a.dt-button {
+  margin-bottom: 20px;
+}
+.addbttn{
+  margin-left: 0px !important;
+}
+
+</style>

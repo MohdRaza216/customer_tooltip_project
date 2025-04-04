@@ -1,0 +1,109 @@
+.activity-head{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin: 20px;
+   
+}
+.activity-head-line{
+    margin: 10px;
+    width: 30%;
+    height: 2px;
+    color: gray;
+    background-color: currentColor;
+    opacity: 0.1;
+}
+.activity-head-title{
+    width: 30%;
+    text-align: center;
+}
+.notification-box-all{
+    border-radius: 14px;
+    padding: 10px 12px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    position: relative; 
+}
+.notification-box-all:hover{
+    background: rgba(216, 216, 216, 0.2);
+    border: rgba(216, 216, 216, 0.5);
+}
+.stripe{
+    border-radius: 20px;
+    margin: auto;
+    background: #38a538;
+    width: 4px;
+    height: 25px;
+    margin-left: -11px;
+}
+.stripe.red{
+    background: #f36c62;
+}
+
+.imgcontent i{background:rgba(105, 138, 247, 0.25);
+    padding: 20px 20px!important;
+    position: relative!important;
+    justify-content: center!important;
+    align-items: center!important;
+    text-align: center!important;
+    vertical-align: middle!important;
+    border-radius: 50%;
+}
+.activity-inner{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.activity-content{
+    width: 100%;
+}
+.activity-tag{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 5px;
+}
+.activity-title{
+    font-size: 12px;
+    font-weight: 700;
+}
+.activity-time{
+    font-size: 12px;
+    font-weight: 500;
+    color: gray;
+    position: relative;
+    justify-content: center;
+}
+.activity-time .small-icon{
+    font-size: 3px;
+    position: relative;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.activity-detail{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    justify-content: space-between;
+}
+.activity-close-icon{
+    padding: 5px;
+}
+.text-marked{
+    color: rgb(39, 141, 236);
+}
+.notification-span{
+    color: white;
+    margin: 0px 2px;
+    border-radius: 50%;
+    background: #e96e49;
+    padding: 0px 6px;
+    }
+

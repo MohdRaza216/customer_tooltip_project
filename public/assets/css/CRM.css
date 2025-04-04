@@ -1,0 +1,814 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.help-block {
+  margin-left: 10px;
+  color: red;
+}
+
+.hdrw {
+  border: none !important;
+  padding-top: 20px !important;
+}
+
+.tm0_5 {
+  margin-top: -0.5px;
+}
+
+.tm2 {
+  margin-top: -2px;
+}
+
+.linehr {
+  margin: -1px !important;
+  padding-left: 20px !important;
+}
+.sals {
+  margin-top: -19px !important;
+}
+.row-mtop5 {
+  border: 1px solid #e6e9eb;
+  color: #415164;
+  background-color: #f1f5f7;
+  border-color: #e6e9eb;
+  border-radius: 4px;
+}
+.cm {
+  margin-top: -27px !important;
+  margin-left: -19px !important;
+}
+
+.aliss {
+  margin-top: -37px;
+  margin-bottom: -30px;
+}
+.tog {
+  margin-top: 12px !important;
+}
+.feed {
+  margin-top: -10px;
+}
+#drop-zone {
+  max-width: 99% !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.drop_z {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
+
+.camp {
+  margin-top: 0px !important;
+  text-wrap: nowrap;
+  margin-right: 0px !important;
+}
+
+.prev {
+  display: block;
+}
+
+.mtgb {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.create {
+  margin-top: 0px !important;
+  position: absolute;
+  top: -35px;
+  left: 0px;
+  z-index: 99;
+}
+#first_col {
+  position: relative;
+  padding: 4px 26px 18px 26px;
+  display: block;
+  border-radius: 11px;
+  margin-right: 20px !important;
+  /* background-color: #fff; */
+}
+
+#toggle_btn {
+  /* margin-right: 10px; */
+  margin-right: -24px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#wrapper {
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+#sec_col {
+  display: none;
+  margin-top: -13px;
+  margin: 17px -10px 20px;
+  margin-left: 10px;
+}
+
+.Date {
+  margin-top: 0px !important;
+  margin-bottom: -25px !important;
+}
+
+#chart {
+  height: 100% !important;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: -10px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: rgb(10, 208, 10);
+}
+
+.img-width-height {
+  width: 200px;
+  height: fit-content;
+}
+
+.dropdownalignment {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.doubledate {
+  height: 20px !important;
+  text-align: center !important;
+}
+
+@media only screen and (max-width: 770px) {
+  #toggle_btn {
+    margin-top: 10px !important;
+    width: 40px !important;
+  }
+  #showcontent {
+    padding-right: 7px;
+  }
+}
+
+.analytics_dashboard {
+  background-color: #f3f5f9;
+  width: 100%;
+  position: relative;
+  height: 500px !important;
+  padding: 1rem 1rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem !important;
+}
+
+.analytics_dashboard_upper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.analytics_dashboard_heading {
+  font-size: 21px;
+  font-weight: 200;
+}
+
+.card_box {
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  height: 14rem !important;
+  padding: 13px 15px;
+  gap: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.card_icon {
+  position: absolute;
+  right: 15px;
+  font-size: 11px;
+  background-color: #d3e2f7;
+  color: rgb(27, 44, 98);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_week {
+  display: flex;
+  gap: 5px;
+}
+
+.card_heading {
+  font-size: 11px;
+  font-weight: 500;
+  color: grey;
+}
+
+.card_number {
+  font-size: 18px;
+}
+
+.card_week {
+  font-size: 9px;
+  font-weight: 500;
+  color: grey;
+}
+
+.analytics_dashboard_upper_left {
+  width: 40%;
+  height: 100%;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.two_card_arrange {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 1rem !important;
+  align-items: center;
+}
+
+.analytics_dashboard_upper_right {
+  padding: 10px 10px;
+  width: 58%;
+  height: 100% !important;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .navbar_hamburger_icon,
+  .analytics_dashboard {
+    height: fit-content;
+
+    gap: 1.5rem;
+  }
+
+  .analytics_dashboard_heading {
+    font-size: 18px;
+  }
+
+  .two_card_arrange {
+    gap: 1rem;
+  }
+
+  .card_box {
+    padding: 15px 7px;
+    gap: 7px;
+  }
+
+  .card_icon {
+    font-size: 10px;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 10px;
+  }
+
+  .card_heading {
+    font-size: 10px;
+  }
+
+  .card_number {
+    font-size: 17px;
+  }
+
+  .card_week {
+    font-size: 9px;
+  }
+
+  .analytics_dashboard_upper_left {
+    width: 100%;
+  }
+
+  .analytics_dashboard_upper_right {
+    width: 100%;
+    height: 15rem;
+    padding: 10px 0px;
+  }
+
+  .charts_title {
+    font-size: 10px;
+  }
+
+  .analytics_dashboard_lower {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .analytics_dashboard_lower_left {
+    width: 80%;
+  }
+
+  .analytics_dashboard_lower_middle {
+    width: 80%;
+  }
+
+  .analytics_dashboard_lower_right {
+    width: 80%;
+    padding-top: 15px;
+    height: 15rem;
+    gap: 10px;
+  }
+
+  #donut_chart {
+    transform: scale(0.6);
+  }
+
+  .donut_charts_title {
+    font-size: 13px;
+  }
+
+  .world_map_heading {
+    font-size: 13px;
+  }
+
+  .world_map {
+    height: 12rem;
+  }
+
+  .world_map_btn {
+    width: 13px;
+    height: 13px;
+    font-size: 10px;
+  }
+
+  .analytics_dashboard_upper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .dashboard_calender {
+    font-size: 13px;
+  }
+
+  .wrapper {
+    padding-top: 20px;
+  }
+
+  .wrapper header {
+    padding: 10px 15px;
+  }
+
+  header .icons span {
+    height: 25px;
+    width: 25px;
+    margin: 0 1px;
+    line-height: 38px;
+    font-size: 12px;
+  }
+
+  header .current-date {
+    font-size: 15px;
+  }
+
+  .calendar {
+    padding: 15px 10px;
+  }
+
+  .calendar .days {
+    margin-bottom: 8px;
+  }
+
+  .calendar li {
+    font-size: 13px;
+  }
+
+  .calendar .days li {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .days li::before {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@media (width >=700px) {
+  .dashboard {
+    height: 120vh;
+    gap: 25px;
+  }
+
+  .dashboard_heading {
+    font-size: 22px;
+  }
+
+  .pages_heading {
+    font-size: 14px;
+  }
+
+  .dashboard_li {
+    height: 45px;
+  }
+
+  .li_icons {
+    font-size: 15px;
+  }
+
+  .li_names {
+    font-size: 15px;
+  }
+
+  .navbar {
+    height: 65px;
+  }
+
+  .navbar_person_img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar_person {
+    font-size: 15px;
+  }
+
+  .navbar_icons {
+    font-size: 18px;
+  }
+
+  .navbar_hamburger_icon {
+    font-size: 18px;
+  }
+
+  .analytics_dashboard {
+    padding-left: 0;
+  }
+
+  .navbar_bell {
+    font-size: 18px;
+  }
+
+  .navbar_notification {
+    font-size: 7px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .analytics_dashboard {
+    height: calc(100vh - 65px);
+    padding: 1.5rem 2rem;
+    gap: 1.8rem;
+  }
+
+  .analytics_dashboard_heading {
+    font-size: 25px;
+  }
+
+  .card_box {
+    padding: 19px 15px;
+    gap: 12px;
+  }
+
+  .card_icon {
+    font-size: 14px;
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .card_heading {
+    font-size: 14px;
+  }
+
+  .card_number {
+    font-size: 23px;
+  }
+
+  .card_week {
+    font-size: 12px;
+  }
+
+  .analytics_dashboard_upper_right {
+    height: 16rem;
+  }
+
+  .analytics_dashboard_lower_right {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 18rem;
+    gap: 20px;
+  }
+
+  #donut_chart {
+    transform: scale(0.8);
+  }
+
+  .donut_charts_title {
+    font-size: 15px;
+  }
+
+  .world_map_heading {
+    font-size: 15px;
+  }
+
+  .world_map {
+    height: 15.5rem;
+  }
+
+  .world_map_btn {
+    width: 17px;
+    height: 17px;
+    font-size: 12px;
+  }
+
+  .charts_title {
+    font-size: 15px;
+  }
+
+  .dashboard_calender {
+    font-size: 15px;
+  }
+
+  .wrapper {
+    padding-top: 20px;
+  }
+
+  .wrapper header {
+    padding: 15px 15px;
+  }
+
+  header .icons span {
+    height: 35px;
+    width: 35px;
+    margin: 0 1px;
+    line-height: 38px;
+    font-size: 15px;
+  }
+
+  header .current-date {
+    font-size: 17px;
+  }
+
+  .calendar {
+    padding: 10px 15px;
+  }
+
+  .calendar .days {
+    margin-bottom: 15px;
+  }
+
+  .calendar li {
+    font-size: 14px;
+  }
+
+  .calendar .days li {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .days li::before {
+    height: 28px;
+    width: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mrglft-12 {
+    margin-left: -12px;
+  }
+
+  .crt-campgn-bttn {
+    margin-right: 10px !important;
+  }
+}
+
+.padding14px {
+  padding-left: 12px !important;
+}
+
+#toggle_btn {
+  margin-right: 28px !important;
+}
+
+/* Correction */
+.tc {
+  margin-right: -1px;
+}
+.td {
+  margin-right: 1px;
+}
+button.hrbtns.newbttn_default.mke_zind {
+  z-index: 1000;
+  margin-left: 15px;
+}
+
+button.hrbtns.itemgrnbtn.mke_zind2 {
+  z-index: 1000;
+  margin-left: 15px;
+}
+
+.col-md-3.ali_maet {
+  margin-left: -5px;
+}
+
+.purchasegrps.ali_inpmaet {
+  margin-left: 0px;
+  margin-right: -1px;
+}
+
+label.purchaseinfo.ali_sgat {
+  margin-bottom: 5px;
+}
+
+.col-md-12.blkftr.ali_esolc {
+  margin-top: -24px;
+}
+
+button.impbtn-default.vst_mar {
+  margin-left: 15px;
+}
+
+.dropdown-with-icon.alg_inpbotom {
+  margin-bottom: 18px;
+}
+
+label.purchaseinfo.wgt_inc {
+  font-weight: 500;
+}
+
+.demo-html.alg_tbl {
+  margin-left: 15px;
+}
+
+label.purchaseinfo.alg_margtop {
+  margin-top: 7px;
+}
+.demo-html.mt-0.stble-margin1 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/* correction */
+
+.tc {
+  margin-right: -1px;
+}
+.td {
+  margin-right: 1px;
+}
+.rotatebtn {
+  margin-right: 2px;
+}
+.arrowbttn {
+  margin-right: -2px;
+}
+.savebttn {
+  margin-right: -1px;
+}
+.save_btn {
+  margin-right: -1px;
+}
+.r_rotate {
+  margin-right: -6px;
+}
+.rotate_arrow {
+  margin-right: -5px;
+}
+.newthebtn.algh_tpo {
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+.col-md-6.agh_margtpo {
+  margin-top: 5px;
+}
+.col-md-6.agh_marglft {
+  margin-left: -5px;
+}
+.purchasegrps.aligh_wid {
+  width: 373px;
+}
+.col-md-6.agh_margrgt {
+  margin-left: 5px;
+}
+.col-md-6.ali_admarg {
+  margin-left: -5px;
+  margin-top: 2px;
+}
+.drag-file-area.Ali_dragareaa {
+  width: 400px;
+  margin-left: 185px;
+}
+span.material-icons-outlined.upload-icon.al_tpomarg {
+  margin-top: -20px;
+  margin-left: 25px;
+}
+h3.dynamic-message.al_margn {
+  margin-left: 35px;
+}
+span.browse-files.al_marglftn {
+  margin-left: 25px;
+  margin-top: -40px;
+}
+.col-md-6.ctrfilter.toggle-items.lign_topmarg {
+  margin-top: 15px;
+}
+
+.container-fluid.ali_tblcrct.tblcontainer.p-2 {
+  width: 700px;
+  margin-left: -20px;
+  margin-top: 39px;
+}
+.col-md-3.marg_ali {
+  margin-left: -5px;
+}
+.alis {
+  margin-top: -40px !important;
+  margin-left: 0 !important;
+}
+.pad {
+  padding: 28px !important;
+}
+.padd {
+  padding: 20px !important;
+}
+.row.invtblerow1 {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.row.invtblerow2 {
+  margin-left: -15px;
+}
+.invseccol.invt_owrr {
+  margin-top: 3px;
+  margin-left: -25px;
+  margin-right: -5px;
+  padding: 8px 8px 10px;
+}
+p.card_icon.ila_icno {
+  margin-top: 20px;
+}
+.col-md-6.magali_3 {
+  margin-top: 3px;
+}
+button.actions-btn.bs-deselect-all.btn.btn-light {
+  overflow: hidden;
+}
+button.actions-btn.bs-select-all.btn.btn-light {
+  overflow: hidden;
+}
+.purchasegrp.alghi_selectdeselect {
+  position: relative;
+  z-index: 1;
+}
+button#toggle_btn1 {
+  margin-right: 28px;
+  margin-top: 2px;
+}
+@media only screen and (min-width: 1200px) {
+  .dropdown-menu.show {
+    width: 215px;
+  }
+}
+.padfsin {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.snsin {
+  scrollbar-width: none !important;
+}
+.crm-add-btn {
+  position: absolute;
+  top: -44px;
+  z-index: 99;
+  /* text-transform:capitalize; */
+}
+/* ............ */
+.marginbtm {
+  margin-bottom: -1px !important;
+}
+.ftcom {
+  margin-right: 5px !important;
+}
+.cmsave {
+  margin-left: 1px !important;
+}
+.newcom {
+  text-transform: capitalize;
+}
+.togglecom {
+  margin-top: 15px !important;
+  background-color: #f6f8fa !important;
+  margin-right: 39px !important;
+}
+.dropcom {
+  margin-top: -25px !important;
+}

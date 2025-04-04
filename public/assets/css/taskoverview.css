@@ -1,0 +1,28 @@
+.tasklistbtn {
+    border: 1px solid #e6e9eb;
+    padding: 6px 12px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.overviewheader {
+    background: #fff;
+    border: 1px solid #dce1ef;
+    border-radius: 4px;
+    padding: 20px;
+    position: relative;
+}
+.sphr{
+    margin-top: 10px !important;
+}
+
+.taskp {
+    margin-top: 1px !important;
+}
+.pt {
+    margin-bottom: 3px;
+}
+.upf {
+    line-height: 1.8 !important;
+}

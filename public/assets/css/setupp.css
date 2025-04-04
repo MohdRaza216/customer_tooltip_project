@@ -1,0 +1,127 @@
+.rh-class {
+  color: #1b82b3 !important;
+  text-transform: none !important;
+}
+
+.vs {
+  font-size: 18px !important;
+}
+
+.staff {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.add {
+  font-size: 16px !important;
+  padding: 0px 8px;
+  margin-top: -5px;
+}
+
+.staf {
+  /* margin-top: -3px !important; */
+}
+
+.form-cnt1 .fileline {
+  /* margin-bottom: 9px; */
+  margin: 10px 0px;
+}
+
+#accordionWithplusicon > .accordion-item {
+  /* border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important; */
+}
+
+#accordionwithplusExample2 > button {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+#accor_plusExamplecollapse12 .fileline {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.staf {
+  margin-bottom: 16px !important;
+  font-size: 0.8rem !important;
+  margin-top: 0px !important;
+}
+
+#accor_plusExamplecollapse1 > .accordion-body {
+  padding-top: 0px !important;
+}
+
+#frm1 {
+  position: relative;
+  margin: 0.5rem 0rem;
+}
+
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0px;
+  left: 0;
+  z-index: 999;
+  margin-left: 50px;
+  transition: all 0.5s ease;
+}
+
+.role-txt {
+  font-weight: bold !important;
+  margin: 10px 0px;
+}
+
+.movetorightabit {
+  padding: 6px 0 0 0px !important;
+}
+
+/* .accordion-button {
+  padding: 1rem 2.7rem !important;
+} */
+.modal-footer > * {
+  /* margin: 0.5rem; */
+}
+
+.text-muted {
+  /* color: #6c757d !important; */
+  color: #000 !important;
+}
+
+.cnt-margin1 {
+  margin-top: 16px;
+}
+
+.cnt-padding .purchaseinfo {
+  margin-top: 16px;
+}
+
+.checkbox input,
+.checkbox label {
+  margin-left: 5px !important;
+}
+
+#E-Sign,
+#Tags,
+#Leads {
+  margin-top: -15px;
+}
+
+.give-left-margin {
+  margin-left: 183px !important;
+}
+@media (max-width: 768px) {
+  .give-left-margin {
+    left: 0px !important;
+    z-index: 999 !important;
+    margin-left: 0px !important;
+  }
+}
+
+.taskfooter .tasksave1 {
+  margin-right: 0px;
+}
+/*  */
+.marginbottom {
+  margin-bottom: -1px !important;
+}
