@@ -43,4 +43,41 @@ class CustomersController extends BaseController
             </div>
         </div>';
     }
+
+    public function store()
+    {
+        $customerModel = new CustomerModel();
+
+        $validationRules = [
+            'name' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
+            'company' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
+            'address' => 'required',
+            'gst' => 'permit_empty|alpha_numeric',
+            'mobile' => 'required|numeric',
+            'description' => 'permit_empty'
+        ];
+
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
+
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'company_name' => $this->request->getPost('company'),
+            'address' => $this->request->getPost('address'),
+            'gst_number' => $this->request->getPost('gst'),
+            'mobile_number' => $this->request->getPost('mobile'),
+            'description' => $this->request->getPost('description'),
+        ];
+
+        if ($customerModel->insert($data)) {
+            return $this->response->setJSON(['status' => 'success']);
+        } else {
+            return $this->response->setStatusCode(500)->setJSON(['status' => 'error']);
+        }
+    }
+    
 }
