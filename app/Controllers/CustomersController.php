@@ -44,6 +44,7 @@ class CustomersController extends BaseController
             <div class="mt-2 text-end">
             <button class="btn btn-sm btn-info viewCustomerBtn" data-id="' . $id . '">View</button>
             <button class="btn btn-sm btn-warning editCustomerBtn" data-id="' . $id . '">Edit</button>
+            <button class="btn btn-sm btn-danger deleteCustomerBtn" data-id="' . $id . '">Delete</button>
             </div>
             ';
     }
@@ -145,4 +146,13 @@ class CustomersController extends BaseController
         }
     }
 
+    public function delete($id)
+    {
+        $customerModel = new CustomerModel();
+        if ($customerModel->delete($id)) {
+            return $this->response->setJSON(['status' => 'success']);
+        } else {
+            return $this->response->setStatusCode(500)->setJSON(['status' => 'error']);
+        }
+    }
 }

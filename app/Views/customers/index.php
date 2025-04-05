@@ -20,6 +20,12 @@
     <!-- Toastr JS -->
     <script src="assets/js/toastr.min.js"></script>
 
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         .popover {
             max-width: 300px;
@@ -329,6 +335,37 @@
                         $('.text-danger').text('');
                         $.each(errors, function (key, val) {
                             $('.error-edit-' + key).text(val);
+                        });
+                    }
+                });
+            });
+
+            $(document).on('click', '.deleteCustomerBtn', function () {
+                let id = $(this).data('id');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#6c757d',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "<?= base_url('customers/delete/') ?>" + id,
+                            success: function (response) {
+                                if (response.status === 'success') {
+                                    toastr.success('Customer deleted successfully!');
+                                    setTimeout(() => location.reload(), 1000);
+                                } else {
+                                    toastr.error('An error occurred while deleteing the customer.');
+                                }
+                            },
+                            error: function () {
+                                toastr.error('An error occurred while deleting the customer.');
+                            }
                         });
                     }
                 });
