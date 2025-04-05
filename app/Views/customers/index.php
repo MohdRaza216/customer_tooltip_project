@@ -32,39 +32,52 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h2>Customer List</h2>
-        <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#addCustomerModal">Add
-            Customer</button>
+    <div class="container-fluid mt-4">
+        <div class="d-flex" id="mainContainer">
 
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>Sr No</th>
-                    <th>Name</th>
-                    <th>Company</th>
-                    <th>Mobile</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $sr_no = 1;
-                foreach ($customers as $customer): ?>
-                    <tr>
-                        <td><?= $sr_no++; ?></td>
-                        <td>
-                            <span class="customer-tooltip" data-customer-id="<?= $customer['id']; ?>"
-                                data-bs-toggle="popover" data-bs-trigger="hover focus" title="<?= esc($customer['name']) ?>"
-                                style="cursor: pointer;">
-                                <?= esc($customer['name']); ?>
-                            </span>
-                        </td>
-                        <td><?= esc($customer['company_name']); ?></td>
-                        <td><?= esc($customer['mobile_number']); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+            <div class="flex-grow-1 me-3" id="customerTableWrapper" style="width: 100%;">
+                <h2>Customer List</h2>
+                <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#addCustomerModal">Add
+                    Customer</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Mobile</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $sr_no = 1;
+                        foreach ($customers as $customer): ?>
+                            <tr>
+                                <td><?= $sr_no++; ?></td>
+                                <td>
+                                    <span class="customer-tooltip" data-customer-id="<?= $customer['id']; ?>"
+                                        data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                        title="<?= $customer['name'] ?>" style="cursor: pointer;">
+                                        <?= esc($customer['name']); ?>
+                                    </span>
+                                </td>
+                                <td><?= esc($customer['company_name']); ?></td>
+                                <td><?= esc($customer['mobile_number']); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="d-none border-start ps-3" id="customerDetailsWrapper" style="width: 50%;">
+                <h4>Customer Details</h4>
+                <div id="customerDetailsContent">
+                    <!-- Content will be loaded via AJAX -->
+                </div>
+            </div>
+        </div>
     </div>
+
+
 
     <!-- Add Customer Modal -->
     <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel"
@@ -112,6 +125,22 @@
                         <button type="submit" class="btn btn-primary">Add Customer</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Customer Modal -->
+    <div class="modal fade" id="viewCustomerModal" tabindex="-1" aria-labelledby="viewCustomerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Customer Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="viewCustomerContent">
+                    <!-- Content will be loaded via AJAX -->
+                </div>
             </div>
         </div>
     </div>
@@ -195,6 +224,24 @@
                         $('.customer-tooltip').popover('hide');
                     }
                 }, 100);
+            });
+
+            $(document).on('click', '.viewCustomerBtn', function () {
+                const customerId = $(this).data('id');
+
+                $.get("<?= base_url('customers/view/') ?>" + customerId, function (html) {
+                    $('#customerDetailsContent').html(html);
+                    $('#customerDetailsWrapper').removeClass('d-none');
+                    $('#customerTableWrapper').css('width', '50%');
+                });
+
+                $('.customer-tooltip').popover('hide');
+            });
+
+            $(document).on('click', '#closeDetails', function () {
+                $('#customerDetailsWrapper').addClass('d-none');
+                $('#customerDetailsContent').html('');
+                $('#customerTableWrapper').css('width', '100%');
             });
         });
     </script>

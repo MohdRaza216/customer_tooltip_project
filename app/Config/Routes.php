@@ -11,4 +11,5 @@ $routes->group('customers', function ($routes) {
     $routes->get('/', 'CustomersController::index');
     $routes->get('getTooltip/(:num)', 'CustomersController::getTooltip/$1');
     $routes->post('store', 'CustomersController::store');
+    $routes->get('view/(:num)', 'CustomersController::view/$1');
 });

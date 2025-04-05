@@ -39,9 +39,12 @@ class CustomersController extends BaseController
                 <p><strong>Mobile:</strong> ' . esc($customer['mobile_number']) . '</p>
             </div>
             <div class="tab-pane fade" id="note-' . $id . '">
-                <p>' . esc($customer['description']) . '</p>
+                <p><strong>Description:</strong> ' . esc($customer['description']) . '</p>
             </div>
-        </div>';
+            <div class="mt-2 text-end">
+            <button class="btn btn-sm btn-info viewCustomerBtn" data-id="' . $id . '">View</button>
+            </div>
+            ';
     }
 
     public function store()
@@ -79,5 +82,16 @@ class CustomersController extends BaseController
             return $this->response->setStatusCode(500)->setJSON(['status' => 'error']);
         }
     }
-    
+
+    public function view($id)
+    {
+        $customerModel = new CustomerModel();
+        $customer = $customerModel->find($id);
+
+        if (!$customer) {
+            return $this->response->setStatusCode(404)->setBody('Customer not found');
+        }
+
+        return view('customers/view_customer_details', ['customer' => $customer]);
+    }
 }
