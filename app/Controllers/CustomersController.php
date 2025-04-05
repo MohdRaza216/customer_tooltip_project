@@ -23,30 +23,32 @@ class CustomersController extends BaseController
         }
 
         return '
-        <ul class="nav nav-tabs" id="customerTabs">
-            <li class="nav-item">
-                <a class="nav-link active" id="info-tab" data-bs-toggle="tab" href="#info-' . $id . '">Info</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="note-tab" data-bs-toggle="tab" href="#note-' . $id . '">Note</a>
-            </li>
-        </ul>
-        <div class="tab-content mt-2">
-            <div class="tab-pane fade show active" id="info-' . $id . '">
-                <p><strong>Company:</strong> ' . esc($customer['company_name']) . '</p>
-                <p><strong>Address:</strong> ' . esc($customer['address']) . '</p>
-                <p><strong>GST:</strong> ' . esc($customer['gst_number']) . '</p>
-                <p><strong>Mobile:</strong> ' . esc($customer['mobile_number']) . '</p>
-            </div>
-            <div class="tab-pane fade" id="note-' . $id . '">
-                <p><strong>Description:</strong> ' . esc($customer['description']) . '</p>
-            </div>
-            <div class="mt-2 text-end">
-            <button class="btn btn-sm btn-info viewCustomerBtn" data-id="' . $id . '">View</button>
-            <button class="btn btn-sm btn-warning editCustomerBtn" data-id="' . $id . '">Edit</button>
-            <button class="btn btn-sm btn-danger deleteCustomerBtn" data-id="' . $id . '">Delete</button>
-            </div>
-            ';
+    <ul class="nav nav-tabs" id="customerTabs-' . $id . '">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#info-' . $id . '"><i class="bi bi-info-circle me-1"></i>Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#note-' . $id . '"><i class="bi bi-card-text me-1"></i>Note</a>
+        </li>
+    </ul>
+    <div class="tab-content mt-2">
+        <div class="tab-pane fade show active" id="info-' . $id . '">
+            <div class="mb-1"><i class="bi bi-building me-2 text-primary"></i><strong>Company:</strong> ' . esc($customer['company_name']) . '</div>
+            <div class="mb-1"><i class="bi bi-geo-alt me-2 text-success"></i><strong>Address:</strong> ' . esc($customer['address']) . '</div>
+            <div class="mb-1"><i class="bi bi-receipt me-2 text-warning"></i><strong>GST:</strong> ' . esc($customer['gst_number']) . '</div>
+            <div class="mb-1"><i class="bi bi-telephone me-2 text-info"></i><strong>Mobile:</strong> ' . esc($customer['mobile_number']) . '</div>
+        </div>
+        <div class="tab-pane fade" id="note-' . $id . '">
+            <div><i class="bi bi-stickies me-2 text-secondary"></i><strong>Description:</strong> ' . esc($customer['description']) . '</div>
+        </div>
+        <div class="mt-3 text-end">
+            <button class="btn btn-sm btn-info viewCustomerBtn me-1" data-id="' . $id . '"><i class="bi bi-eye"></i></button>
+            <button class="btn btn-sm btn-warning editCustomerBtn me-1" data-id="' . $id . '"><i class="bi bi-pencil-square"></i></button>
+            <button class="btn btn-sm btn-danger deleteCustomerBtn" data-id="' . $id . '"><i class="bi bi-trash"></i></button>
+        </div>
+    </div>
+';
+
     }
 
     public function store()

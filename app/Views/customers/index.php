@@ -26,7 +26,38 @@
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <style>
+        .popover-body {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        
+        .customer-tooltip {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        .customer-tooltip:hover {
+            text-decoration: none;
+        }
+        
+        .customer-tooltip-content {
+            max-width: 300px;
+        }
+        
+        .popover-header {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+        }
+
         .popover {
             max-width: 300px;
         }
