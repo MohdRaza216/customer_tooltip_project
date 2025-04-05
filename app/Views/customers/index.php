@@ -69,7 +69,6 @@
             </div>
 
             <div class="d-none border-start ps-3" id="customerDetailsWrapper" style="width: 50%;">
-                <h4>Customer Details</h4>
                 <div id="customerDetailsContent">
                     <!-- Content will be loaded via AJAX -->
                 </div>
@@ -141,6 +140,60 @@
                 <div class="modal-body" id="viewCustomerContent">
                     <!-- Content will be loaded via AJAX -->
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Customer Modal -->
+    <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editCustomerModalLabel">Edit Customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="editCustomerForm">
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="editCustomerId">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="name">Name</label>
+                                <input type="text" name="name" id="editName" class="form-control">
+                                <span class="text-danger error-edit-name"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="company">Company</label>
+                                <input type="text" name="company" id="editCompany" class="form-control">
+                                <span class="text-danger error-edit-company"></span>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label" for="address">Address</label>
+                                <textarea name="address" id="editAddress" class="form-control" rows="2"></textarea>
+                                <span class="text-danger error-edit-address"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="gst">GST Number</label>
+                                <input type="text" name="gst" id="editGst" class="form-control">
+                                <span class="text-danger error-edit-gst"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="mobile">Mobile</label>
+                                <input type="text" name="mobile" id="editMobile" class="form-control">
+                                <span class="text-danger error-edit-mobile"></span>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label" for="description">Description</label>
+                                <textarea name="description" id="editDescription" class="form-control"
+                                    rows="2"></textarea>
+                                <span class="text-danger error-edit-description"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Update Customer</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -242,6 +295,43 @@
                 $('#customerDetailsWrapper').addClass('d-none');
                 $('#customerDetailsContent').html('');
                 $('#customerTableWrapper').css('width', '100%');
+            });
+
+            $(document).on('click', '.editCustomerBtn', function () {
+                let id = $(this).data('id');
+
+                $.get("<?= base_url('customers/edit/') ?>" + id, function (response) {
+                    if (response.status === 'success') {
+                        const customer = response.data;
+
+                        $('#editCustomerId').val(customer.id);
+                        $('#editName').val(customer.name);
+                        $('#editCompany').val(customer.company_name);
+                        $('#editAddress').val(customer.address);
+                        $('#editGst').val(customer.gst_number);
+                        $('#editMobile').val(customer.mobile_number);
+                        $('#editDescription').val(customer.description);
+
+                        $('#editCustomerModal').modal('show');
+                    }
+                });
+            });
+
+            $('#editCustomerForm').on('submit', function (e) {
+                e.preventDefault();
+                $.post("<?= base_url('customers/update') ?>", $(this).serialize(), function (response) {
+                    if (response.status === 'success') {
+                        toastr.success('Customer updated successfully!');
+                        $("#editCustomerModal").modal("hide");
+                        setTimeout(() => location.reload(), 1000);
+                    } else if (response.status === 'error') {
+                        let errors = response.errors;
+                        $('.text-danger').text('');
+                        $.each(errors, function (key, val) {
+                            $('.error-edit-' + key).text(val);
+                        });
+                    }
+                });
             });
         });
     </script>

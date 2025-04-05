@@ -43,6 +43,7 @@ class CustomersController extends BaseController
             </div>
             <div class="mt-2 text-end">
             <button class="btn btn-sm btn-info viewCustomerBtn" data-id="' . $id . '">View</button>
+            <button class="btn btn-sm btn-warning editCustomerBtn" data-id="' . $id . '">Edit</button>
             </div>
             ';
     }
@@ -94,4 +95,54 @@ class CustomersController extends BaseController
 
         return view('customers/view_customer_details', ['customer' => $customer]);
     }
+
+    public function edit($id)
+    {
+        $customerModel = new CustomerModel();
+        $customer = $customerModel->find($id);
+
+        if ($customer) {
+            return $this->response->setJSON(['status' => 'success', 'data' => $customer]);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Customer not found']);
+        }
+    }
+
+    public function update()
+    {
+        $customerModel = new CustomerModel();
+        $id = $this->request->getPost('id');
+
+        $validationRules = [
+            'name' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
+            'company' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
+            'address' => 'required',
+            'gst' => 'permit_empty|alpha_numeric',
+            'mobile' => 'required|numeric',
+            'description' => 'permit_empty'
+        ];
+
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
+
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'company_name' => $this->request->getPost('company'),
+            'address' => $this->request->getPost('address'),
+            'gst_number' => $this->request->getPost('gst'),
+            'mobile_number' => $this->request->getPost('mobile'),
+            'description' => $this->request->getPost('description'),
+        ];
+
+        if ($customerModel->update($id, $data)) {
+            return $this->response->setJSON(['status' => 'success']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Update failed']);
+        }
+    }
+
 }
