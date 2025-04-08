@@ -5,6 +5,8 @@ use App\Models\CustomerModel;
 
 class CustomersController extends BaseController
 {
+    private const NAME_VALIDATION_RULE = 'required|min_length[3]|max_length[50]|alpha_numeric_space';
+
     public function index()
     {
         $customerModel = new CustomerModel();
@@ -56,8 +58,8 @@ class CustomersController extends BaseController
         $id = $this->request->getPost('id');
 
         $validationRules = [
-            'name' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
-            'company' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
+            'name' => self::NAME_VALIDATION_RULE,
+            'company' => self::NAME_VALIDATION_RULE,
             'address' => 'required',
             'gst' => 'permit_empty|alpha_numeric',
             'mobile' => 'required|numeric',
@@ -71,7 +73,7 @@ class CustomersController extends BaseController
             ]);
         }
 
-        $existing = $customerModel->where('mobile_number', $this->request->getPost('mobile'))
+        $existing = $customerModel->where('mobile_number', trim($this->request->getPost('mobile')))
             ->where('id !=', $id) // for update
             ->first();
         if ($existing) {
@@ -79,12 +81,12 @@ class CustomersController extends BaseController
         }
 
         $data = [
-            'name' => $this->request->getPost('name'),
-            'company_name' => $this->request->getPost('company'),
-            'address' => $this->request->getPost('address'),
-            'gst_number' => $this->request->getPost('gst'),
-            'mobile_number' => $this->request->getPost('mobile'),
-            'description' => $this->request->getPost('description'),
+            'name' => trim($this->request->getPost('name')),
+            'company_name' => trim($this->request->getPost('company')),
+            'address' => trim($this->request->getPost('address')),
+            'gst_number' => trim($this->request->getPost('gst')),
+            'mobile_number' => trim($this->request->getPost('mobile')),
+            'description' => trim($this->request->getPost('description')),
         ];
 
         if ($customerModel->insert($data)) {
@@ -121,11 +123,11 @@ class CustomersController extends BaseController
     public function update()
     {
         $customerModel = new CustomerModel();
-        $id = $this->request->getPost('id');
+        $id = trim($this->request->getPost('id'));
 
         $validationRules = [
-            'name' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
-            'company' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
+            'name' => self::NAME_VALIDATION_RULE,
+            'company' => self::NAME_VALIDATION_RULE,
             'address' => 'required',
             'gst' => 'permit_empty|alpha_numeric',
             'mobile' => 'required|numeric',
@@ -139,20 +141,20 @@ class CustomersController extends BaseController
             ]);
         }
 
-        $existing = $customerModel->where('mobile_number', $this->request->getPost('mobile'))
-            ->where('id !=', $id) // for update
+        $existing = $customerModel->where('mobile_number', trim($this->request->getPost('mobile')))
+            ->where('id !=', $id)
             ->first();
         if ($existing) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Mobile number already exists.']);
         }
 
         $data = [
-            'name' => $this->request->getPost('name'),
-            'company_name' => $this->request->getPost('company'),
-            'address' => $this->request->getPost('address'),
-            'gst_number' => $this->request->getPost('gst'),
-            'mobile_number' => $this->request->getPost('mobile'),
-            'description' => $this->request->getPost('description'),
+            'name' => trim($this->request->getPost('name')),
+            'company_name' => trim($this->request->getPost('company')),
+            'address' => trim($this->request->getPost('address')),
+            'gst_number' => trim($this->request->getPost('gst')),
+            'mobile_number' => trim($this->request->getPost('mobile')),
+            'description' => trim($this->request->getPost('description')),
         ];
 
         if ($customerModel->update($id, $data)) {
