@@ -36,20 +36,20 @@
             border-radius: 8px;
             font-size: 14px;
         }
-        
+
         .customer-tooltip {
             cursor: pointer;
             text-decoration: underline;
         }
-        
+
         .customer-tooltip:hover {
             text-decoration: none;
         }
-        
+
         .customer-tooltip-content {
             max-width: 300px;
         }
-        
+
         .popover-header {
             background-color: #007bff;
             color: white;
@@ -64,6 +64,43 @@
 
         .popover-body {
             padding: 0.75rem;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        #closeDetails:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.4s ease-in-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     </style>
 </head>

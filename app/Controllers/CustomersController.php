@@ -47,13 +47,13 @@ class CustomersController extends BaseController
             <button class="btn btn-sm btn-danger deleteCustomerBtn" data-id="' . $id . '"><i class="bi bi-trash"></i></button>
         </div>
     </div>
-';
-
+    ';
     }
 
     public function store()
     {
         $customerModel = new CustomerModel();
+        $id = $this->request->getPost('id');
 
         $validationRules = [
             'name' => 'required|min_length[3]|max_length[50]|alpha_numeric_space',
@@ -69,6 +69,13 @@ class CustomersController extends BaseController
                 'status' => 'error',
                 'errors' => $this->validator->getErrors()
             ]);
+        }
+
+        $existing = $customerModel->where('mobile_number', $this->request->getPost('mobile'))
+            ->where('id !=', $id) // for update
+            ->first();
+        if ($existing) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Mobile number already exists.']);
         }
 
         $data = [
@@ -93,7 +100,7 @@ class CustomersController extends BaseController
         $customer = $customerModel->find($id);
 
         if (!$customer) {
-            return $this->response->setStatusCode(404)->setBody('Customer not found');
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Customer not found']);
         }
 
         return view('customers/view_customer_details', ['customer' => $customer]);
@@ -103,7 +110,7 @@ class CustomersController extends BaseController
     {
         $customerModel = new CustomerModel();
         $customer = $customerModel->find($id);
-
+        
         if ($customer) {
             return $this->response->setJSON(['status' => 'success', 'data' => $customer]);
         } else {
@@ -130,6 +137,13 @@ class CustomersController extends BaseController
                 'status' => 'error',
                 'errors' => $this->validator->getErrors()
             ]);
+        }
+
+        $existing = $customerModel->where('mobile_number', $this->request->getPost('mobile'))
+            ->where('id !=', $id) // for update
+            ->first();
+        if ($existing) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Mobile number already exists.']);
         }
 
         $data = [
