@@ -374,6 +374,14 @@
             $(document).on('click', '.editCustomerBtn', function () {
                 let id = $(this).data('id');
 
+                // Load edit form content here...
+
+                // Log activity
+                $.post('<?= base_url('customers/logActivity') ?>', {
+                    entity_id: id,
+                    action: 'Opened Edit Modal',
+                    description: 'Opened the edit modal for customer ID ' + id
+                });
                 $.get("<?= base_url('customers/edit/') ?>" + id, function (response) {
                     if (response.status === 'success') {
                         const customer = response.data;
@@ -410,6 +418,15 @@
 
             $(document).on('click', '.deleteCustomerBtn', function () {
                 let id = $(this).data('id');
+
+                // Show delete confirmation modal...
+
+                // Log activity
+                $.post('<?= base_url('customers/logActivity') ?>', {
+                    entity_id: id,
+                    action: 'Opened Delete Modal',
+                    description: 'Opened the delete modal for customer ID ' + id
+                });
                 Swal.fire({
                     title: 'Are you sure?',
                     text: "You won't be able to revert this!",

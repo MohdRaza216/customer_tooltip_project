@@ -193,4 +193,19 @@ class CustomersController extends BaseController
         return view('customers/activity_log_list', ['logs' => $logs]);
     }
 
+    public function logActivity()
+    {
+        $request = service('request');
+        $model = new \App\Models\ActivityLogModel();
+
+        $model->insert([
+            'entity_id' => $request->getPost('entity_id'),
+            'action' => $request->getPost('action'),
+            'description' => $request->getPost('description'),
+            'entity' => 'customer',
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
+
+        return $this->response->setJSON(['status' => 'success']);
+    }
 }

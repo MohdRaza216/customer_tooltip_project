@@ -16,4 +16,5 @@ $routes->group('customers', function ($routes) {
     $routes->post('update', 'CustomersController::update');
     $routes->post('delete/(:num)', 'CustomersController::delete/$1');
     $routes->get('getActivityLog/(:num)', 'CustomersController::getActivityLog/$1');
+    $routes->post('logActivity', 'CustomersController::logActivity');
 });
