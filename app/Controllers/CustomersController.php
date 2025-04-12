@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\CustomerModel;
+helper('activity');
 
 class CustomersController extends BaseController
 {
@@ -90,6 +91,8 @@ class CustomersController extends BaseController
         ];
 
         if ($customerModel->insert($data)) {
+            $newId = $customerModel->getInsertID();
+            log_activity('Created', 'customer', $newId, 'Customer added');
             return $this->response->setJSON(['status' => 'success']);
         } else {
             return $this->response->setStatusCode(500)->setJSON(['status' => 'error']);
@@ -100,6 +103,7 @@ class CustomersController extends BaseController
     {
         $customerModel = new CustomerModel();
         $customer = $customerModel->find($id);
+        log_activity('Viewed', 'customer', $id, 'Customer viewed');
 
         if (!$customer) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Customer not found']);
@@ -112,7 +116,7 @@ class CustomersController extends BaseController
     {
         $customerModel = new CustomerModel();
         $customer = $customerModel->find($id);
-        
+
         if ($customer) {
             return $this->response->setJSON(['status' => 'success', 'data' => $customer]);
         } else {
@@ -158,6 +162,7 @@ class CustomersController extends BaseController
         ];
 
         if ($customerModel->update($id, $data)) {
+            log_activity('Updated', 'customer', $id, 'Customer updated');
             return $this->response->setJSON(['status' => 'success']);
         } else {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Update failed']);
@@ -168,9 +173,24 @@ class CustomersController extends BaseController
     {
         $customerModel = new CustomerModel();
         if ($customerModel->delete($id)) {
+            log_activity('Deleted', 'customer', $id, 'Customer deleted');
             return $this->response->setJSON(['status' => 'success']);
         } else {
             return $this->response->setStatusCode(500)->setJSON(['status' => 'error']);
         }
     }
+
+    public function getActivityLog($customerId)
+    {
+        $model = new \App\Models\ActivityLogModel();
+
+        $logs = $model
+            ->where('entity', 'customer')
+            ->where('entity_id', $customerId)
+            ->orderBy('created_at', 'DESC')
+            ->findAll();
+
+        return view('customers/activity_log_list', ['logs' => $logs]);
+    }
+
 }
